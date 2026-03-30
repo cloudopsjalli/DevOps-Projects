@@ -1,0 +1,60 @@
+mysql -h shopsmart-db.xxxxxxxxxxxxxxxxxxxxx.amazonaws.com -P 3306 -u admin -p
+enter password : xxxxxxxxx
+=====================================================================================================
+mysql>
+mysql> CREATE DATABASE shopsmart;
+USE shopsmart;
+
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    price FLOAT
+);
+
+INSERT INTO products (name, price) VALUES ('Laptop', 800);
+INSERT INTO products (name, price) VALUES ('Phone', 500);Query OK, 1 row affected (0.03 sec)
+
+mysql> USE shopsmart;
+Database changed
+mysql>
+mysql> CREATE TABLE products (
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+    ->     name VARCHAR(100),
+    ->     price FLOAT
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql>
+mysql> INSERT INTO products (name, price) VALUES ('Laptop', 800);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO products (name, price) VALUES ('Phone', 500);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| shopsmart          |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql>
+
+Script to connect to DB
+===============================================================================
+CREATE DATABASE shopsmart;
+USE shopsmart;
+
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    price FLOAT
+);
+
+INSERT INTO products (name, price) VALUES ('Laptop', 800);
+INSERT INTO products (name, price) VALUES ('Phone', 500);
