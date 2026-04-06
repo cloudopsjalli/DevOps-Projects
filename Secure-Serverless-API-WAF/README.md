@@ -3,7 +3,7 @@
 
 ## Architecture Diagram
 
-![AWS Architecture](Secure-Server.png)
+![AWS Architecture](architecture/secure.jpg)
 
 
 
