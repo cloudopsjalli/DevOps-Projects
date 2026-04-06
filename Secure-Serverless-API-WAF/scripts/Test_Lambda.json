@@ -1,0 +1,25 @@
+###########################################################
+Test Lambda
+##############################################################
+{
+  "requestContext": {
+    "http": {
+      "sourceIp": "1.2.3.4"
+    }
+  },
+  "body": "{\"username\":\"testuser\"}"
+}
+
+##############################################################################################################################
+Attacker Script
+
+################################################################################################################################
+curl -X POST "https://d3tx1ectz4bqkj.cloudfront.net/login" -H "Content-Type: application/json" -d '{"username":"testuser"}'
+
+
+for i in {1..100}; do
+  curl -X POST https://d3tx1ectz4bqkj.cloudfront.net/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"attacker"}'
+done
+######################################################################
