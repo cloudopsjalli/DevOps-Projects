@@ -1,0 +1,21 @@
+{
+  "version": "0",
+  "id": "abcd1234",
+  "detail-type": "AWS API Call via CloudTrail",
+  "source": "aws.cloudtrail",
+  "account": "123456789012",
+  "time": "2025-08-18T12:00:00Z",
+  "region": "us-east-1",
+  "detail": {
+    "eventVersion": "1.08",
+    "userIdentity": {
+      "type": "IAMUser",
+      "userName": "anonymous-user"
+    },
+    "eventTime": "2025-08-18T12:00:00Z",
+    "eventSource": "cloudtrail.amazonaws.com",
+    "eventName": "StopLogging",
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "192.168.1.100"
+  }
+}

@@ -1,0 +1,58 @@
+
+============================================================================================================
+
+create a compromised-user1 and attach policy 
+
+
+
+{
+  "Version":"2012-10-17",
+  "Statement":[
+    {
+      "Effect":"Allow",
+      "Action":[
+        "cloudtrail:DescribeTrails",
+        "cloudtrail:GetTrailStatus",
+        "cloudtrail:StopLogging",
+        "cloudtrail:DeleteTrail"
+      ],
+      "Resource":"*"
+    }
+  ]
+}
+==============================================================================================================
+
+
+aws cloudtrail service control policy
+
+
+{
+  "Version":"2012-10-17",
+  "Statement":[
+    {
+      "Sid":"ProtectCloudTrail",
+      "Effect":"Deny",
+      "Action":[
+        "cloudtrail:StopLogging",
+        "cloudtrail:DeleteTrail"
+      ],
+      "Resource":"*"
+    }
+  ]
+}
+===============================================================================================================
+Event bridge rule
+
+{
+  "source": ["aws.cloudtrail"],
+  "detail-type": ["AWS API Call via CloudTrail"],
+  "detail": {
+    "eventSource": ["cloudtrail.amazonaws.com"],
+    "eventName": [
+      "StopLogging",
+      "DeleteTrail"
+    ]
+  }
+}
+
+==============================================================================================================
